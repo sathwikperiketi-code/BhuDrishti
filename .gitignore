@@ -1,0 +1,43 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.dpapi
+work/
+
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+.pytest_cache/
+backend/.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+*.egg-info/
+
+# Local prototype data
+*.db
+*.sqlite
+*.sqlite3
+backend/*.db
+backend/**/*.db
+backend/document_storage/
+
+# Generated release archives and snapshots (keep intentional fixtures in samples/)
+outputs/
+
+# JavaScript
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+coverage/
+*.tsbuildinfo
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,21 @@
+.bd-dashboard-panel { animation: bd-dashboard-enter 280ms var(--bd-ease-out) both; }
+.bd-dashboard-metric { transition: transform 160ms ease, box-shadow 160ms ease; }
+.bd-dashboard-metric:hover { transform: translateY(-2px); }
+.bd-dashboard-metric:active { transform: translateY(0) scale(.99); }
+.bd-dashboard-fill { transform-origin: left; animation: bd-dashboard-fill 500ms var(--bd-ease-out) both; }
+.bd-workspace-identity { border: 1px solid var(--bd-border); border-left: 3px solid var(--bd-accent); border-radius: 10px; background: var(--bd-surface, #fff); padding: 16px 18px; }
+.bd-workspace-identity dl { display: grid; grid-template-columns: minmax(140px, .55fr) minmax(0, 1.3fr) minmax(0, 1.2fr); gap: 16px 24px; margin: 0; }
+.bd-workspace-identity dl > div { min-width: 0; }
+.bd-workspace-identity dt { margin-bottom: 6px; color: var(--bd-text-subtle); font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.bd-workspace-identity dd { margin: 0; color: var(--bd-text); font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.bd-workspace-role dd { color: var(--bd-accent); font-size: 16px; font-weight: 700; letter-spacing: -.02em; }
+.bd-workspace-identity p { margin: 5px 0 0; color: var(--bd-text-subtle); font-size: 10px; line-height: 1.5; }
+@media (max-width: 1100px) { .bd-workspace-identity dl { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .bd-workspace-role { grid-column: 1 / -1; } }
+@media (max-width: 700px) { .bd-workspace-identity dl { grid-template-columns: minmax(0, 1fr); gap: 14px; } .bd-workspace-identity { padding: 14px 16px; } }
+@keyframes bd-dashboard-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bd-dashboard-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .bd-dashboard-panel, .bd-dashboard-fill { animation: none; }
+  .bd-dashboard-metric { transition: none; }
+  .bd-dashboard-metric:hover, .bd-dashboard-metric:active { transform: none; }
+}

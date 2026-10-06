@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+
+.bd-route-loading { display: grid; gap: 14px; animation: bd-route-entrance .2s ease-out; }
+.bd-route-loading-title, .bd-route-loading-line, .bd-route-loading-grid > div { background: #e4eeea; border-radius: 6px; }
+.bd-route-loading-title { width: min(300px, 55vw); height: 29px; }
+.bd-route-loading-line { width: min(450px, 70vw); height: 13px; }
+.bd-route-loading-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+.bd-route-loading-grid > div { height: 125px; }
+.bd-route-error { display: grid; justify-items: start; gap: 12px; max-width: 580px; margin: 11vh auto; padding: 30px; border: 1px solid #e8d1ca; border-radius: 10px; background: #fff; color: #a75c47; }
+.bd-route-error h1 { margin: 0; color: #2b4545; font-size: 19px; font-weight: 700; }
+.bd-route-error p { margin: 0; color: #6e8580; font-size: 12px; }
+.bd-route-error button { display: inline-flex; align-items: center; gap: 7px; margin-top: 8px; padding: 9px 12px; background: #255d4d; border-radius: 6px; color: #fff; font-size: 11px; font-weight: 700; }
+@keyframes bd-route-entrance { from { opacity: .5; } to { opacity: 1; } }
+@media (max-width: 700px) { .bd-route-loading-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bd-route-loading { animation: none; } }
